@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="SRC" pattern="file[angular-pro-app-seed]:src//*||file[angular-pro-app-seed]:img//*||file:index.html" />
+</component>
