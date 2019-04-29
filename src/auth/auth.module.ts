@@ -10,6 +10,15 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 // shared modules
 import { SharedModule } from './shared/shared.module';
 
+export const firebaseConfig: FirebaseAppConfig = {
+  apiKey: "AIzaSyDiECdTOgpGL2id0rJI9b9BIAGO4MS5ayY",
+  authDomain: "fitness-app-907f6.firebaseapp.com",
+  databaseURL: "https://fitness-app-907f6.firebaseio.com",
+  projectId: "fitness-app-907f6",
+  storageBucket: "fitness-app-907f6.appspot.com",
+  messagingSenderId: "681049812071"
+};
+
 export const ROUTES: Routes = [
   {
     path: 'auth',
@@ -23,15 +32,6 @@ export const ROUTES: Routes = [
     ],
   },
 ];
-
-export const firebaseConfig: FirebaseAppConfig = {
-  apiKey: "AIzaSyDiECdTOgpGL2id0rJI9b9BIAGO4MS5ayY",
-  authDomain: "fitness-app-907f6.firebaseapp.com",
-  databaseURL: "https://fitness-app-907f6.firebaseio.com",
-  projectId: "fitness-app-907f6",
-  storageBucket: "fitness-app-907f6.appspot.com",
-  messagingSenderId: "681049812071"
-};
 
 @NgModule({
   imports: [

@@ -18,7 +18,6 @@ export interface User {
 @Injectable()
 export class AuthService {
   auth$ = this.af.authState.do(next => {
-    console.log(next);
     if (!next) {
       this.store.set('user', null);
       return;
