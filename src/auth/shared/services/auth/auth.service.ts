@@ -18,6 +18,7 @@ export interface User {
 @Injectable()
 export class AuthService {
   auth$ = this.af.authState.do(next => {
+    console.log(next);
     if (!next) {
       this.store.set('user', null);
       return;
@@ -38,5 +39,9 @@ export class AuthService {
 
   logInUser(email: string, password: string) {
     return this.af.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  logOutUser() {
+    return this.af.auth.signOut()
   }
 }
