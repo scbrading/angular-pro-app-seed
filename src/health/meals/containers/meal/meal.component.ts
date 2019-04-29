@@ -24,6 +24,6 @@ import {Meal} from '../../../shared/services/meals/meals.service';
 
 export class MealComponent {
   addMeal(event: Meal) {
-    console.log(event);
+    console.log('Meal', event);
   }
 }
