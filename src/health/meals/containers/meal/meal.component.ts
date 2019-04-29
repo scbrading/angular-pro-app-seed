@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
-// interfaces
-import {Meal} from '../../../shared/services/meals/meals.service';
+// meals service
+import {
+  Meal,
+  MealsService,
+} from '../../../shared/services/meals/meals.service';
 
 @Component({
   selector: 'meal',
@@ -10,20 +14,25 @@ import {Meal} from '../../../shared/services/meals/meals.service';
     <div class="meal">
       <div class="meal__title">
         <h1>
-          <img src="/img/food.svg">
+          <img src="/img/food.svg" />
           <span>Create meal</span>
         </h1>
       </div>
       <div>
-        <meal-form
-        (create)="addMeal($event)">
-        </meal-form>
+        <meal-form (create)="addMeal($event)"> </meal-form>
       </div>
-    </div>`,
+    </div>
+  `,
 })
-
 export class MealComponent {
-  addMeal(event: Meal) {
-    console.log('Meal', event);
+  constructor(private mealsService: MealsService, private router: Router) {}
+
+  async addMeal(event: Meal) {
+    await this.mealsService.addMeal(event);
+    this.backToMeals();
+  }
+
+  backToMeals() {
+    this.router.navigate(['meals']);
   }
 }
