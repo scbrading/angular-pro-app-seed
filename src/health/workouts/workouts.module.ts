@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 // containers
 import { WorkoutsComponent } from './containers/workouts/workouts.component';
 
+// routes
 export const ROUTES: Routes = [{ path: '', component: WorkoutsComponent }];
 
 @NgModule({
